@@ -13,10 +13,5 @@ set LIB=c:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Tools\MSVC
 set LIB=%LIB%;c:\Program Files (x86)\Windows Kits\10\Lib\10.0.19041.0\um\x64\
 set LIB=%LIB%;c:\Program Files (x86)\Windows Kits\10\Lib\10.0.19041.0\ucrt\x64\
 
-<<<<<<< HEAD
 @cl.exe /EHsc cmdplayer.cpp /ocmdplay.exe
-=======
-@cl.exe /EHsc vpxdecoderidl.c cmdplayer.cpp /ocmdplay.exe
-
->>>>>>> 171c81a (Uploding files)
 pause
