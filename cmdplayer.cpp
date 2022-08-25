@@ -12,8 +12,6 @@
 
 using namespace std;
 
-#include "vpxdecoderidl.h"
-
 wchar_t *convertCharArrayToLPCWSTR(const char* charArray)
 {
     wchar_t* wString=new wchar_t[4096];
@@ -24,7 +22,7 @@ wchar_t *convertCharArrayToLPCWSTR(const char* charArray)
 int main(int argc, char** argv)
 {
 
-    cout << "cmdplayer v0.2" << endl;
+    cout << "cmdplayer v0.3" << endl;
     
     int hr = CoInitialize(NULL);
     if (FAILED(hr)) 
@@ -93,13 +91,10 @@ int main(int argc, char** argv)
         goto endprogram;
     }    
 
-    RECT desktop_rect;
-    GetWindowRect(HWND_DESKTOP, &desktop_rect);
-    window0->SetWindowPosition(0, 0, desktop_rect.right - desktop_rect.left, desktop_rect.bottom - desktop_rect.top);
-    window0->put_WindowStyle(WS_EX_COMPOSITED);
-
-    OAHWND* Owner;
-    window0->get_Owner(Owner);
+    RECT desktoprect;
+    GetWindowRect(GetDesktopWindow(), &desktoprect);    
+    window0->SetWindowPosition(0, 0, desktoprect.right - desktoprect.left, desktoprect.bottom - desktoprect.top);
+    window0->put_WindowStyle(WS_EX_COMPOSITED);   
 
     if (SUCCEEDED(hr))
     { 
